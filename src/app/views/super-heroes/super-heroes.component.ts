@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { SuperHeroes } from './super-heroes.interface';
+import { SuperHeroe } from './super-heroes.interface';
 import { SuperHeroesService } from './super-heroes.service';
 
 @Component({
@@ -17,9 +17,11 @@ export class SuperHeroesComponent implements OnInit, AfterViewInit {
     'publisher',
     'alter_ego',
     'first_appearance',
+    'buttons',
   ];
-  dataSource: MatTableDataSource<SuperHeroes>;
+  dataSource: MatTableDataSource<SuperHeroe>;
   nameFiltered = '';
+
   ngOnInit() {
     this.superHeroesService.getAllHeros().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
@@ -30,14 +32,23 @@ export class SuperHeroesComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.updatePaginator();
   }
+
   updatePaginator() {
-    this.dataSource.paginator = this.paginator;
+    if (this.dataSource) this.dataSource.paginator = this.paginator;
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  onAddClick() {
+    console.log('add');
+  }
+  onEditClick(hero: SuperHeroe) {
+    console.log(hero);
+  }
+  onDeleteClick(hero: SuperHeroe) {}
 
   // getHero(id: number) {
   //   this.superHeroesService.getHeroById(id).subscribe((data: any) => {
