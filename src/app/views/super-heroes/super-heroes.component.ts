@@ -6,6 +6,7 @@ import { filter, switchMap } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 import { SuperHeroe } from '../common/super-heroes.interface';
 import { HeroDetailsComponent } from '../hero-details/hero-details.component';
+import { LoadingService } from '../interceptor/loading.service';
 import { SuperHeroesService } from './super-heroes.service';
 
 @Component({
@@ -16,7 +17,8 @@ import { SuperHeroesService } from './super-heroes.service';
 export class SuperHeroesComponent implements OnInit, AfterViewInit {
   constructor(
     private superHeroesService: SuperHeroesService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    public loadingService: LoadingService
   ) {}
   @ViewChild(MatPaginator) paginator: MatPaginator;
   displayedColumns: string[] = [
@@ -26,6 +28,7 @@ export class SuperHeroesComponent implements OnInit, AfterViewInit {
     'first_appearance',
     'buttons',
   ];
+
   dataSource: MatTableDataSource<SuperHeroe>;
   nameFiltered = '';
 
@@ -76,5 +79,9 @@ export class SuperHeroesComponent implements OnInit, AfterViewInit {
       )
       .subscribe(() => this.getHeroes());
   }
-  onDeleteClick(hero: SuperHeroe) {}
+  onDeleteClick(hero: SuperHeroe) {
+    this.superHeroesService
+      .deleteHero(hero.id)
+      .subscribe(() => this.getHeroes());
+  }
 }

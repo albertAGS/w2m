@@ -1,3 +1,25 @@
+<mat-toolbar color="primary">
+  <mat-progress-bar
+    mode="indeterminate"
+    [value]="50"
+    [bufferValue]="75"
+    *ngIf="loadingService.isLoading$ | async; else elseTemplate"
+  ></mat-progress-bar>
+
+  <ng-template #elseTemplate>
+    <div class="progress-bar"></div>
+  </ng-template>
+
+  <img
+    src="https://www.nicepng.com/png/detail/182-1829678_marvel-vs-dc-logo-png-image-black-and.png"
+    alt="Marvel DC Logo"
+  />
+  <span class="toolbar-title">My Hero App</span>
+  <img
+    src="https://w7.pngwing.com/pngs/501/435/png-transparent-marvel-cinematic-universe-iron-man-carol-danvers-captain-america-marvel-comics-iron-man-marvel-avengers-assemble-comics-avengers.png"
+    alt="Avengers"
+  />
+</mat-toolbar>
 <mat-form-field appearance="outline">
   <mat-label>Filter</mat-label>
   <input

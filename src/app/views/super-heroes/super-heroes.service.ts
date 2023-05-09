@@ -38,7 +38,7 @@ export class SuperHeroesService {
     return this.http.post(this.apiUrl, hero);
   }
   // Eliminar un súper héroe.
-  deleteHero(id: number) {
+  deleteHero(id: string) {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete(url);
   }

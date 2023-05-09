@@ -4,7 +4,7 @@
     <mat-form-field>
       <mat-label>Name</mat-label>
       <div class="input-wrapper">
-        <input matInput formControlName="superhero" required />
+        <input matInput formControlName="superhero" required uppercase />
       </div>
       <mat-error *ngIf="validInput('superhero')">Name is required</mat-error>
     </mat-form-field>
@@ -32,8 +32,11 @@
   <button mat-button (click)="onCancel()">Cancel</button>
   <button
     mat-raised-button
-    [mat-dialog-close]="{ hero: heroForm.value, title }"
+    [mat-dialog-close]="
+      heroForm.invalid ? null : { hero: heroForm.value, title }
+    "
     class="save-button"
+    [disabled]="heroForm.invalid"
   >
     Save
   </button>
