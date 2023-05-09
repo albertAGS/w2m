@@ -2,6 +2,7 @@
   "heroes": [
     {
       "superhero": "Batman",
+      "id": 0,
       "publisher": "DC Comics",
       "alter_ego": "Bruce Wayne",
       "first_appearance": "Detective Comics #27",
@@ -12,10 +13,12 @@
       "publisher": "DC Comics",
       "alter_ego": "Kal-El",
       "first_appearance": "Action Comics #1",
-      "characters": "Kal-El"
+      "characters": "Kal-El",
+      "id": 1
     },
     {
       "superhero": "Flash",
+      "id": 2,
       "publisher": "DC Comics",
       "alter_ego": "Jay Garrick",
       "first_appearance": "Flash Comics #1",
@@ -23,6 +26,7 @@
     },
     {
       "superhero": "Green Lantern",
+      "id": 3,
       "publisher": "DC Comics",
       "alter_ego": "Alan Scott",
       "first_appearance": "All-American Comics #16",
@@ -30,6 +34,7 @@
     },
     {
       "superhero": "Green Arrow",
+      "id": 4,
       "publisher": "DC Comics",
       "alter_ego": "Oliver Queen",
       "first_appearance": "More Fun Comics #73",
@@ -37,6 +42,7 @@
     },
     {
       "superhero": "Wonder Woman",
+      "id": 5,
       "publisher": "DC Comics",
       "alter_ego": "Princess Diana",
       "first_appearance": "All Star Comics #8",
@@ -44,6 +50,7 @@
     },
     {
       "superhero": "Martian Manhunter",
+      "id": 6,
       "publisher": "DC Comics",
       "alter_ego": "J'onn J'onzz",
       "first_appearance": "Detective Comics #225",
@@ -51,6 +58,7 @@
     },
     {
       "superhero": "Robin/Nightwing",
+      "id": 7,
       "publisher": "DC Comics",
       "alter_ego": "Dick Grayson",
       "first_appearance": "Detective Comics #38",
@@ -58,6 +66,7 @@
     },
     {
       "superhero": "Blue Beetle",
+      "id": 8,
       "publisher": "DC Comics",
       "alter_ego": "Dan Garret",
       "first_appearance": "Mystery Men Comics #1",
@@ -65,6 +74,7 @@
     },
     {
       "superhero": "Black Canary",
+      "id": 9,
       "publisher": "DC Comics",
       "alter_ego": "Dinah Drake",
       "first_appearance": "Flash Comics #86",
@@ -72,6 +82,7 @@
     },
     {
       "superhero": "Spider Man",
+      "id": 10,
       "publisher": "Marvel Comics",
       "alter_ego": "Peter Parker",
       "first_appearance": "Amazing Fantasy #15",
@@ -79,6 +90,7 @@
     },
     {
       "superhero": "Captain America",
+      "id": 11,
       "publisher": "Marvel Comics",
       "alter_ego": "Steve Rogers",
       "first_appearance": "Captain America Comics #1",
@@ -86,6 +98,7 @@
     },
     {
       "superhero": "Iron Man",
+      "id": 12,
       "publisher": "Marvel Comics",
       "alter_ego": "Tony Stark",
       "first_appearance": "Tales of Suspense #39",
@@ -93,6 +106,7 @@
     },
     {
       "superhero": "Thor",
+      "id": 13,
       "publisher": "Marvel Comics",
       "alter_ego": "Thor Odinson",
       "first_appearance": "Journey into Myster #83",
@@ -100,6 +114,7 @@
     },
     {
       "superhero": "Hulk",
+      "id": 14,
       "publisher": "Marvel Comics",
       "alter_ego": "Bruce Banner",
       "first_appearance": "The Incredible Hulk #1",
@@ -107,6 +122,7 @@
     },
     {
       "superhero": "Wolverine",
+      "id": 15,
       "publisher": "Marvel Comics",
       "alter_ego": "James Howlett",
       "first_appearance": "The Incredible Hulk #180",
@@ -114,6 +130,7 @@
     },
     {
       "superhero": "Daredevil",
+      "id": 16,
       "publisher": "Marvel Comics",
       "alter_ego": "Matthew Michael Murdock",
       "first_appearance": "Daredevil #1",
@@ -121,6 +138,7 @@
     },
     {
       "superhero": "Hawkeye",
+      "id": 17,
       "publisher": "Marvel Comics",
       "alter_ego": "Clinton Francis Barton",
       "first_appearance": "Tales of Suspense #57",
@@ -128,6 +146,7 @@
     },
     {
       "superhero": "Cyclops",
+      "id": 18,
       "publisher": "Marvel Comics",
       "alter_ego": "Scott Summers",
       "first_appearance": "X-Men #1",
@@ -135,6 +154,7 @@
     },
     {
       "superhero": "Silver Surfer",
+      "id": 19,
       "publisher": "Marvel Comics",
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
