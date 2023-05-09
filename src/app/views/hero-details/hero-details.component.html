@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>{{ title }}</h2>
+<mat-dialog-content>
+  <form [formGroup]="heroForm">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <div class="input-wrapper">
+        <input matInput formControlName="superhero" required />
+      </div>
+      <mat-error *ngIf="validInput('superhero')">Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Publisher</mat-label>
+      <input matInput formControlName="publisher" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Alter Ego</mat-label>
+      <input matInput formControlName="alter_ego" />
+      <mat-error *ngIf="validInput('alter_ego')"
+        >Alter Ego is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>First Appearance</mat-label>
+      <input matInput formControlName="first_appearance" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button
+    mat-raised-button
+    [mat-dialog-close]="{ hero: heroForm.value, title }"
+    class="save-button"
+  >
+    Save
+  </button>
+</mat-dialog-actions>

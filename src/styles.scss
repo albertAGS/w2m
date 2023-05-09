@@ -1,9 +1,17 @@
 html,
 body {
-  max-height: 100vh;
+  height: 100vh;
   background: #f7f7f7;
 }
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+button.mat-raised-button {
+  background-color: #2196f3;
+  color: #fff;
+  &:hover {
+    background-color: #0c7cd5;
+  }
 }

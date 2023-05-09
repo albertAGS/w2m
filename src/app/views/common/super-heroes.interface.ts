@@ -1,6 +1,6 @@
 export interface SuperHeroe {
   superhero: string;
-  id: number;
+  id: string;
   publisher: string;
   alter_ego: string;
   first_appearance: string;

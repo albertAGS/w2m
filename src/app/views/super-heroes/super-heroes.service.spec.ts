@@ -31,7 +31,7 @@ describe('SuperHeroesService', () => {
       expect(superHeroes.length)
         .withContext('Unexpected number of superheroes')
         .toBe(20);
-      const hero = superHeroes.find((superHero) => superHero.id == 0);
+      const hero = superHeroes.find((superHero) => superHero.id == '0');
       expect(hero?.superhero).toBe('Batman');
     });
     const req = httpTestingController.expectOne(apiUrl);
@@ -40,7 +40,7 @@ describe('SuperHeroesService', () => {
   });
 
   it('should retrieve an array of one hero filtered by ID', () => {
-    superHeroesService.getHeroById(1).subscribe((superHero) => {
+    superHeroesService.getHeroById('1').subscribe((superHero) => {
       expect(superHero).toBeTruthy();
       expect(superHero.length).toBe(1);
       expect(superHero[0]?.superhero).toBe('Superman');

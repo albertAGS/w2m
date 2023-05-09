@@ -32,10 +32,10 @@
 
     <ng-container matColumnDef="buttons">
       <th mat-header-cell class="narrow-column" *matHeaderCellDef mat-header>
-        <button mat-raised-button (click)="onAddClick()">Add</button>
+        <button mat-raised-button (click)="onEditModifyClick()">Add</button>
       </th>
       <td mat-cell class="narrow-column" *matCellDef="let row">
-        <button mat-icon-button (click)="onEditClick(row)">
+        <button mat-icon-button (click)="onEditModifyClick(row)">
           <mat-icon>edit</mat-icon>
         </button>
         <button mat-icon-button (click)="onDeleteClick(row)">

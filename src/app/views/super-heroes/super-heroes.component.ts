@@ -1,7 +1,11 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { SuperHeroe } from './super-heroes.interface';
+import { filter, switchMap } from 'rxjs';
+import { v4 as uuidv4 } from 'uuid';
+import { SuperHeroe } from '../common/super-heroes.interface';
+import { HeroDetailsComponent } from '../hero-details/hero-details.component';
 import { SuperHeroesService } from './super-heroes.service';
 
 @Component({
@@ -10,7 +14,10 @@ import { SuperHeroesService } from './super-heroes.service';
   styleUrls: ['./super-heroes.component.scss'],
 })
 export class SuperHeroesComponent implements OnInit, AfterViewInit {
-  constructor(private superHeroesService: SuperHeroesService) {}
+  constructor(
+    private superHeroesService: SuperHeroesService,
+    private dialog: MatDialog
+  ) {}
   @ViewChild(MatPaginator) paginator: MatPaginator;
   displayedColumns: string[] = [
     'name',
@@ -23,14 +30,18 @@ export class SuperHeroesComponent implements OnInit, AfterViewInit {
   nameFiltered = '';
 
   ngOnInit() {
-    this.superHeroesService.getAllHeros().subscribe((data) => {
-      this.dataSource = new MatTableDataSource(data);
-      this.updatePaginator();
-    });
+    this.getHeroes();
   }
 
   ngAfterViewInit() {
     this.updatePaginator();
+  }
+
+  getHeroes() {
+    this.superHeroesService.getAllHeros().subscribe((data) => {
+      this.dataSource = new MatTableDataSource(data);
+      this.updatePaginator();
+    });
   }
 
   updatePaginator() {
@@ -42,17 +53,28 @@ export class SuperHeroesComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  onAddClick() {
-    console.log('add');
-  }
-  onEditClick(hero: SuperHeroe) {
-    console.log(hero);
+  onEditModifyClick(hero?: SuperHeroe) {
+    const dialogRef = this.dialog.open(HeroDetailsComponent, {
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      width: '500px',
+      height: 'auto',
+      data: hero ?? null,
+    });
+
+    dialogRef
+      .afterClosed()
+      .pipe(
+        filter((it: { hero: SuperHeroe; title: string }) => !!it),
+        switchMap((it: { hero: SuperHeroe; title: string }) => {
+          if (it.title === 'New Hero') {
+            it.hero.id = uuidv4();
+            return this.superHeroesService.addHero(it.hero);
+          }
+          return this.superHeroesService.updateHero(it.hero);
+        })
+      )
+      .subscribe(() => this.getHeroes());
   }
   onDeleteClick(hero: SuperHeroe) {}
-
-  // getHero(id: number) {
-  //   this.superHeroesService.getHeroById(id).subscribe((data: any) => {
-  //     console.log(data);
-  //   });
-  // }
 }

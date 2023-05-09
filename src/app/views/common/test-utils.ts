@@ -1,7 +1,7 @@
 export const SUPERHEROES = [
   {
     superhero: 'Batman',
-    id: 0,
+    id: '0',
     publisher: 'DC Comics',
     alter_ego: 'Bruce Wayne',
     first_appearance: 'Detective Comics #27',
@@ -9,7 +9,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Superman',
-    id: 1,
+    id: '1',
     publisher: 'DC Comics',
     alter_ego: 'Kal-El',
     first_appearance: 'Action Comics #1',
@@ -17,7 +17,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Flash',
-    id: 2,
+    id: '2',
     publisher: 'DC Comics',
     alter_ego: 'Jay Garrick',
     first_appearance: 'Flash Comics #1',
@@ -25,7 +25,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Green Lantern',
-    id: 3,
+    id: '3',
     publisher: 'DC Comics',
     alter_ego: 'Alan Scott',
     first_appearance: 'All-American Comics #16',
@@ -34,7 +34,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Green Arrow',
-    id: 4,
+    id: '4',
     publisher: 'DC Comics',
     alter_ego: 'Oliver Queen',
     first_appearance: 'More Fun Comics #73',
@@ -42,7 +42,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Wonder Woman',
-    id: 5,
+    id: '5',
     publisher: 'DC Comics',
     alter_ego: 'Princess Diana',
     first_appearance: 'All Star Comics #8',
@@ -50,7 +50,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Martian Manhunter',
-    id: 6,
+    id: '6',
     publisher: 'DC Comics',
     alter_ego: "J'onn J'onzz",
     first_appearance: 'Detective Comics #225',
@@ -58,7 +58,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Robin/Nightwing',
-    id: 7,
+    id: '7',
     publisher: 'DC Comics',
     alter_ego: 'Dick Grayson',
     first_appearance: 'Detective Comics #38',
@@ -66,7 +66,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Blue Beetle',
-    id: 8,
+    id: '8',
     publisher: 'DC Comics',
     alter_ego: 'Dan Garret',
     first_appearance: 'Mystery Men Comics #1',
@@ -74,7 +74,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Black Canary',
-    id: 9,
+    id: '9',
     publisher: 'DC Comics',
     alter_ego: 'Dinah Drake',
     first_appearance: 'Flash Comics #86',
@@ -82,7 +82,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Spider Man',
-    id: 10,
+    id: '10',
     publisher: 'Marvel Comics',
     alter_ego: 'Peter Parker',
     first_appearance: 'Amazing Fantasy #15',
@@ -90,7 +90,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Captain America',
-    id: 11,
+    id: '11',
     publisher: 'Marvel Comics',
     alter_ego: 'Steve Rogers',
     first_appearance: 'Captain America Comics #1',
@@ -98,7 +98,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Iron Man',
-    id: 12,
+    id: '12',
     publisher: 'Marvel Comics',
     alter_ego: 'Tony Stark',
     first_appearance: 'Tales of Suspense #39',
@@ -106,7 +106,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Thor',
-    id: 13,
+    id: '13',
     publisher: 'Marvel Comics',
     alter_ego: 'Thor Odinson',
     first_appearance: 'Journey into Myster #83',
@@ -114,7 +114,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Hulk',
-    id: 14,
+    id: '14',
     publisher: 'Marvel Comics',
     alter_ego: 'Bruce Banner',
     first_appearance: 'The Incredible Hulk #1',
@@ -122,7 +122,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Wolverine',
-    id: 15,
+    id: '15',
     publisher: 'Marvel Comics',
     alter_ego: 'James Howlett',
     first_appearance: 'The Incredible Hulk #180',
@@ -130,7 +130,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Daredevil',
-    id: 16,
+    id: '16',
     publisher: 'Marvel Comics',
     alter_ego: 'Matthew Michael Murdock',
     first_appearance: 'Daredevil #1',
@@ -138,7 +138,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Hawkeye',
-    id: 17,
+    id: '17',
     publisher: 'Marvel Comics',
     alter_ego: 'Clinton Francis Barton',
     first_appearance: 'Tales of Suspense #57',
@@ -146,7 +146,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Cyclops',
-    id: 18,
+    id: '18',
     publisher: 'Marvel Comics',
     alter_ego: 'Scott Summers',
     first_appearance: 'X-Men #1',
@@ -154,7 +154,7 @@ export const SUPERHEROES = [
   },
   {
     superhero: 'Silver Surfer',
-    id: 19,
+    id: '19',
     publisher: 'Marvel Comics',
     alter_ego: 'Norrin Radd',
     first_appearance: 'The Fantastic Four #48',

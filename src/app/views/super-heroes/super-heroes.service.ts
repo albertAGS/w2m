@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SuperHeroe } from './super-heroes.interface';
+import { SuperHeroe } from '../common/super-heroes.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +15,7 @@ export class SuperHeroesService {
     return this.http.get<SuperHeroe[]>(this.apiUrl);
   }
   // Get by id
-  getHeroById(id: number) {
+  getHeroById(id: string) {
     const params = new HttpParams().set('id', id);
     return this.http.get<SuperHeroe[]>(this.apiUrl, { params });
   }
@@ -31,6 +31,11 @@ export class SuperHeroesService {
   updateHero(hero: SuperHeroe) {
     const url = `${this.apiUrl}/${hero.id}`;
     return this.http.put(url, hero);
+  }
+
+  // add a hero.
+  addHero(hero: SuperHeroe) {
+    return this.http.post(this.apiUrl, hero);
   }
   // Eliminar un súper héroe.
   deleteHero(id: number) {

@@ -4,11 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'allHeroes',
+    redirectTo: 'heroes',
     pathMatch: 'full',
   },
   {
-    path: 'allHeroes',
+    path: 'heroes',
     loadChildren: () =>
       import('./views/super-heroes/super-heroes.module').then(
         (module) => module.SuperHeroesModule
