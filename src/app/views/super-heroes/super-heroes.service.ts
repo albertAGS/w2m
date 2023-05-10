@@ -28,15 +28,16 @@ export class SuperHeroesService {
   }
 
   // Modificar un súper héroe.
-  updateHero(hero: SuperHeroe) {
+  updateHero(hero: Partial<SuperHeroe>) {
     const url = `${this.apiUrl}/${hero.id}`;
-    return this.http.put(url, hero);
+    return this.http.put<SuperHeroe>(url, hero);
   }
 
   // add a hero.
   addHero(hero: SuperHeroe) {
-    return this.http.post(this.apiUrl, hero);
+    return this.http.post<SuperHeroe>(this.apiUrl, hero);
   }
+
   // Eliminar un súper héroe.
   deleteHero(id: string) {
     const url = `${this.apiUrl}/${id}`;

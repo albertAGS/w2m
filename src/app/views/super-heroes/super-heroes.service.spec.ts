@@ -3,6 +3,7 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { SuperHeroe } from '../common/super-heroes.interface';
 import { SUPERHEROES } from '../common/test-utils';
 import { SuperHeroesService } from './super-heroes.service';
 
@@ -49,5 +50,36 @@ describe('SuperHeroesService', () => {
     expect(req.request.params.get('id')).toEqual('1');
     expect(req.request.method).toEqual('GET');
     req.flush([SUPERHEROES[1]]);
+  });
+
+  it('should update a hero', () => {
+    const hero: Partial<SuperHeroe> = {
+      publisher: 'DC',
+    };
+    const url = `${apiUrl}/${hero.id}`;
+
+    superHeroesService.updateHero(hero).subscribe((res) => {
+      expect(res.id).toBe('1');
+    });
+
+    const req = httpTestingController.expectOne(url);
+    expect(req.request.method).toBe('PUT');
+    req.flush({
+      ...SUPERHEROES[1],
+      ...hero,
+    });
+  });
+
+  it('should delete a hero', () => {
+    const id = '1';
+    const url = `${apiUrl}/${id}`;
+
+    superHeroesService.deleteHero(id).subscribe((res) => {
+      expect(res).toBeTruthy();
+    });
+
+    const req = httpTestingController.expectOne(url);
+    expect(req.request.method).toBe('DELETE');
+    req.flush({});
   });
 });
